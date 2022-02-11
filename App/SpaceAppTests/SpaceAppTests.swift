@@ -1,10 +1,3 @@
-//
-//  SpaceAppTests.swift
-//  SpaceAppTests
-//
-//  Created by Eduardo Sanches Bocato on 11/02/2022.
-//
-
 import XCTest
 @testable import SpaceApp
 

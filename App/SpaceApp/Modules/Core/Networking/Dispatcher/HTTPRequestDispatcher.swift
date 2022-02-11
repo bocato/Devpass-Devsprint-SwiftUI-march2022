@@ -1,11 +1,11 @@
 import Combine
 import Foundation
 
-protocol HTTPRequestDispatching {
+public protocol HTTPRequestDispatching {
     func responsePublisher(for request: HTTPRequestType) -> AnyPublisher<HTTPResponseData, HTTPRequestError>
 }
 
-final class HTTPRequestDispatcher: HTTPRequestDispatching {
+public final class HTTPRequestDispatcher: HTTPRequestDispatching {
     // MARK: - Dependencies
 
     private let session: URLSession
@@ -24,7 +24,7 @@ final class HTTPRequestDispatcher: HTTPRequestDispatching {
         self.requestBuilder = requestBuilder
     }
 
-    convenience init(session: URLSession = URLSession.shared) {
+    public convenience init(session: URLSession = URLSession.shared) {
         self.init(
             session: session,
             networkStatusManager: NetworkStatusManager.shared,
@@ -34,7 +34,7 @@ final class HTTPRequestDispatcher: HTTPRequestDispatching {
 
     // MARK: - Public API
 
-    func responsePublisher(for request: HTTPRequestType) -> AnyPublisher<HTTPResponseData, HTTPRequestError> {
+    public func responsePublisher(for request: HTTPRequestType) -> AnyPublisher<HTTPResponseData, HTTPRequestError> {
         guard networkStatusManager.isNetworkReachable() else {
             return Fail(
                 error: HTTPRequestError.unreachableNetwork

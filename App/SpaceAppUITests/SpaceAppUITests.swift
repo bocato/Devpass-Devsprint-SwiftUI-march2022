@@ -1,10 +1,3 @@
-//
-//  SpaceAppUITests.swift
-//  SpaceAppUITests
-//
-//  Created by Eduardo Sanches Bocato on 11/02/2022.
-//
-
 import XCTest
 
 class SpaceAppUITests: XCTestCase {

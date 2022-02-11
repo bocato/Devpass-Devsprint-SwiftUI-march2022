@@ -21,6 +21,9 @@
 		E5090BEC27B6C90700B348A9 /* NetworkStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BEB27B6C90700B348A9 /* NetworkStatusManager.swift */; };
 		E5090BEE27B6C92500B348A9 /* NWPathMonitorAbstraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BED27B6C92500B348A9 /* NWPathMonitorAbstraction.swift */; };
 		E5090BF127B6C97000B348A9 /* HTTPRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BF027B6C97000B348A9 /* HTTPRequestBuilder.swift */; };
+		E5090BF527B6CBA100B348A9 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BF427B6CBA100B348A9 /* HTTPHeaderField.swift */; };
+		E5090BF927B6CF2F00B348A9 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BF827B6CF2F00B348A9 /* HomeScene.swift */; };
+		E5090BFB27B6CF8B00B348A9 /* LaunchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BFA27B6CF8B00B348A9 /* LaunchesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		E5090BEB27B6C90700B348A9 /* NetworkStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusManager.swift; sourceTree = "<group>"; };
 		E5090BED27B6C92500B348A9 /* NWPathMonitorAbstraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWPathMonitorAbstraction.swift; sourceTree = "<group>"; };
 		E5090BF027B6C97000B348A9 /* HTTPRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestBuilder.swift; sourceTree = "<group>"; };
+		E5090BF427B6CBA100B348A9 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		E5090BF827B6CF2F00B348A9 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		E5090BFA27B6CF8B00B348A9 /* LaunchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,7 @@
 		E5090BDB27B6C67A00B348A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E5090BF627B6CEAA00B348A9 /* Services */,
 				E5090BDD27B6C69100B348A9 /* Networking */,
 			);
 			path = Core;
@@ -169,6 +176,7 @@
 		E5090BDC27B6C68A00B348A9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				E5090BF727B6CF2600B348A9 /* Home */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 		E5090BDD27B6C69100B348A9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				E5090BF327B6CB9000B348A9 /* HTTPRequest */,
 				E5090BEF27B6C96000B348A9 /* RequestBuilder */,
 				E5090BEA27B6C8E900B348A9 /* Reachability */,
 				E5090BE527B6C77700B348A9 /* Dispatcher */,
@@ -187,7 +196,6 @@
 		E5090BE027B6C6DB00B348A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E5090BDE27B6C6A500B348A9 /* HTTPRequest.swift */,
 				E5090BE127B6C6F600B348A9 /* HTTPResponseData.swift */,
 				E5090BE327B6C74A00B348A9 /* HTTPRequestError.swift */,
 			);
@@ -218,6 +226,31 @@
 				E5090BF027B6C97000B348A9 /* HTTPRequestBuilder.swift */,
 			);
 			path = RequestBuilder;
+			sourceTree = "<group>";
+		};
+		E5090BF327B6CB9000B348A9 /* HTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				E5090BDE27B6C6A500B348A9 /* HTTPRequest.swift */,
+				E5090BF427B6CBA100B348A9 /* HTTPHeaderField.swift */,
+			);
+			path = HTTPRequest;
+			sourceTree = "<group>";
+		};
+		E5090BF627B6CEAA00B348A9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E5090BFA27B6CF8B00B348A9 /* LaunchesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E5090BF727B6CF2600B348A9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E5090BF827B6CF2F00B348A9 /* HomeScene.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,12 +384,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5090BE427B6C74A00B348A9 /* HTTPRequestError.swift in Sources */,
+				E5090BF527B6CBA100B348A9 /* HTTPHeaderField.swift in Sources */,
 				E5090BEC27B6C90700B348A9 /* NetworkStatusManager.swift in Sources */,
 				E5090BE227B6C6F600B348A9 /* HTTPResponseData.swift in Sources */,
+				E5090BFB27B6CF8B00B348A9 /* LaunchesService.swift in Sources */,
 				E5090BDF27B6C6A500B348A9 /* HTTPRequest.swift in Sources */,
 				E5090BE727B6C78F00B348A9 /* Publisher+HTTPRequestDispatcher.swift in Sources */,
 				E5090BF127B6C97000B348A9 /* HTTPRequestBuilder.swift in Sources */,
 				E5090BEE27B6C92500B348A9 /* NWPathMonitorAbstraction.swift in Sources */,
+				E5090BF927B6CF2F00B348A9 /* HomeScene.swift in Sources */,
 				E5090BE927B6C83F00B348A9 /* HTTPRequestDispatcher.swift in Sources */,
 				E5090BB027B6C60D00B348A9 /* SpaceAppApp.swift in Sources */,
 			);

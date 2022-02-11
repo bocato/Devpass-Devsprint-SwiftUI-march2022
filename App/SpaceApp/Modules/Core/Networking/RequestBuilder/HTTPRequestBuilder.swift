@@ -14,7 +14,7 @@ struct DefaultHTTPRequestBuilder: HTTPRequestBuilder {
     }
 
     func build(from request: HTTPRequestType) throws -> URLRequest {
-        var endpointURL = request.baseURL
+        var endpointURL = request.url
         if !request.path.isEmpty {
             endpointURL = endpointURL.appendingPathComponent(request.path)
         }
