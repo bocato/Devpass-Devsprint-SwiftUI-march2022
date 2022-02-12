@@ -8,11 +8,20 @@ struct DefaultHTTPRequestBuilder: HTTPRequestBuilder {
     // MARK: - Dependencies
 
     private let jsonSerializer: JSONSerialization.Type
+    private let jsonEncoder: JSONEncoder
 
-    init(jsonSerializer: JSONSerialization.Type = JSONSerialization.self) {
+    // MARK: - Initialization
+    
+    init(
+        jsonSerializer: JSONSerialization.Type = JSONSerialization.self,
+        jsonEncoder: JSONEncoder = .init()
+    ) {
         self.jsonSerializer = jsonSerializer
+        self.jsonEncoder = jsonEncoder
     }
 
+    // MARK: - Public API
+    
     func build(from request: HTTPRequestType) throws -> URLRequest {
         var endpointURL = request.url
         if !request.path.isEmpty {
@@ -27,8 +36,6 @@ struct DefaultHTTPRequestBuilder: HTTPRequestBuilder {
         }
 
         switch request.parameters {
-        case let .body(parameters):
-            urlRequest.httpBody = try jsonSerializer.data(withJSONObject: parameters, options: .fragmentsAllowed)
 
         case let .urlQuery(parameters):
             guard var urlComponents = URLComponents(url: endpointURL, resolvingAgainstBaseURL: true) else {
@@ -36,12 +43,20 @@ struct DefaultHTTPRequestBuilder: HTTPRequestBuilder {
             }
             urlComponents.queryItems = parameters.map { .init(name: $0.key, value: $0.value) }
             urlRequest.url = urlComponents.url
+            
+        case let .body(.dictionary(dictionary)):
+            urlRequest.httpBody = try jsonSerializer.data(withJSONObject: dictionary, options: .fragmentsAllowed)
 
-        case let .bodyData(data):
+        case let .body(.data(data)):
             urlRequest.httpBody = data
-
+            
+        case let .body(.encodable(encodable)):
+            let anyEncodable: AnyEncodable = .init(encodable)
+            urlRequest.httpBody = try jsonEncoder.encode(anyEncodable)
+            
         case .requestPlain:
             break
+            
         }
 
         return urlRequest

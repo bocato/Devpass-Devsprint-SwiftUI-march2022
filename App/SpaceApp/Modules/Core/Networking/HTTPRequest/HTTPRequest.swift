@@ -6,10 +6,15 @@ public enum HTTPMethod: String {
 }
 
 public enum HTTPRequestParameters {
-    case body([String: Any])
     case urlQuery([String: String])
-    case bodyData(Data)
+    case body(Body)
     case requestPlain
+    
+    public enum Body {
+        case dictionary([String: Any])
+        case data(Data)
+        case encodable(Encodable)
+    }
 }
 
 public protocol HTTPRequestType {
