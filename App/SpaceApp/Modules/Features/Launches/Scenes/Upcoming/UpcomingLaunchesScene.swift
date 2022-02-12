@@ -32,6 +32,38 @@ struct UpcomingLaunchesScene: View {
     }
 }
 
+struct UpcomingLaunchCard: View {
+    struct Model {
+        let id: String
+        let imageURL: String
+        let name: String
+        let flightNumber: Int
+        let date: String
+        let details: String?
+    }
+    
+    private let model: Model
+    
+    init(model: Model) {
+        self.model = model
+    }
+    
+    var body: some View {
+        VStack {
+            HStack {
+                RemoteImage(url: model.imageURL)
+                VStack {
+                    
+                }
+            }
+            if let details = model.details {
+                Text(details)
+                    .dsTypography(.body)
+            }
+        }
+    }
+}
+
 #if DEBUG
 struct UpcomingLaunchesScene_Previews: PreviewProvider {
     static var previews: some View {

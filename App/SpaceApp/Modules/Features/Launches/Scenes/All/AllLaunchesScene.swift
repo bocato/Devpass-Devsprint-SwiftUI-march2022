@@ -28,9 +28,40 @@ struct AllLaunchesScene: View {
     @StateObject var viewModel: AllLaunchesViewModel
     
     var body: some View {
-        Text("AllLaunchesScene")
+        List {
+            Text("")
+        }
     }
 }
+
+struct LaunchListCard: View {
+    struct Model {
+        let id: String
+        let imageURL: String
+        let flightNumber: Int
+        let name: String
+        let date: String
+        let success: Bool
+    }
+    
+    var body: some View {
+        VStack {
+            HStack {
+                VStack {
+                    
+                }
+            }
+        }
+    }
+}
+
+//let id: String
+//let name: String
+//let links: Links
+//let success: Bool
+//let details: String?
+//let flightNumber: Int
+//let data: String
 
 #if DEBUG
 struct AllLaunchesScene_Previews: PreviewProvider {

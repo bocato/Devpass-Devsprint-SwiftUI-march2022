@@ -34,6 +34,12 @@
 		E5090C1C27B7427500B348A9 /* UpcomingLaunchesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C1B27B7427500B348A9 /* UpcomingLaunchesScene.swift */; };
 		E5090C2427B742FD00B348A9 /* ShipDetailsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2327B742FD00B348A9 /* ShipDetailsScene.swift */; };
 		E5090C2627B7431000B348A9 /* LaunchDetailsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2527B7431000B348A9 /* LaunchDetailsScene.swift */; };
+		E5090C2A27B7BC2E00B348A9 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2927B7BC2E00B348A9 /* DesignSystem.swift */; };
+		E5090C2D27B7BC6700B348A9 /* DS+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2C27B7BC6700B348A9 /* DS+Spacing.swift */; };
+		E5090C3527B7C16900B348A9 /* DS+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3427B7C16900B348A9 /* DS+Size.swift */; };
+		E5090C3927B7C5B000B348A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3827B7C5B000B348A9 /* RemoteImage.swift */; };
+		E5090C3B27B7C6B200B348A9 /* DS+Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3A27B7C6B200B348A9 /* DS+Typography.swift */; };
+		E5090C3D27B7C7BB00B348A9 /* DS+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3C27B7C7BB00B348A9 /* DS+Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,12 @@
 		E5090C1B27B7427500B348A9 /* UpcomingLaunchesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingLaunchesScene.swift; sourceTree = "<group>"; };
 		E5090C2327B742FD00B348A9 /* ShipDetailsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDetailsScene.swift; sourceTree = "<group>"; };
 		E5090C2527B7431000B348A9 /* LaunchDetailsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsScene.swift; sourceTree = "<group>"; };
+		E5090C2927B7BC2E00B348A9 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		E5090C2C27B7BC6700B348A9 /* DS+Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Spacing.swift"; sourceTree = "<group>"; };
+		E5090C3427B7C16900B348A9 /* DS+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Size.swift"; sourceTree = "<group>"; };
+		E5090C3827B7C5B000B348A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		E5090C3A27B7C6B200B348A9 /* DS+Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Typography.swift"; sourceTree = "<group>"; };
+		E5090C3C27B7C7BB00B348A9 /* DS+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Colors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +199,7 @@
 		E5090BDB27B6C67A00B348A9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E5090C2727B7BC0F00B348A9 /* UI */,
 				E5090BF627B6CEAA00B348A9 /* Services */,
 				E5090BDD27B6C69100B348A9 /* Networking */,
 			);
@@ -330,6 +343,7 @@
 		E5090C1227B7405B00B348A9 /* All */ = {
 			isa = PBXGroup;
 			children = (
+				E5090C3327B7BF5300B348A9 /* Views */,
 				E5090C1927B741D400B348A9 /* AllLaunchesScene.swift */,
 			);
 			path = All;
@@ -401,6 +415,58 @@
 				E5090C2327B742FD00B348A9 /* ShipDetailsScene.swift */,
 			);
 			path = Ship;
+			sourceTree = "<group>";
+		};
+		E5090C2727B7BC0F00B348A9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E5090C3627B7C5A100B348A9 /* Components */,
+				E5090C2827B7BC1900B348A9 /* DesignSystem */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		E5090C2827B7BC1900B348A9 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				E5090C2B27B7BC5100B348A9 /* Tokens */,
+				E5090C2927B7BC2E00B348A9 /* DesignSystem.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		E5090C2B27B7BC5100B348A9 /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				E5090C2C27B7BC6700B348A9 /* DS+Spacing.swift */,
+				E5090C3427B7C16900B348A9 /* DS+Size.swift */,
+				E5090C3A27B7C6B200B348A9 /* DS+Typography.swift */,
+				E5090C3C27B7C7BB00B348A9 /* DS+Colors.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		E5090C3327B7BF5300B348A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E5090C3627B7C5A100B348A9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E5090C3727B7C5A700B348A9 /* Views */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E5090C3727B7C5A700B348A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E5090C3827B7C5B000B348A9 /* RemoteImage.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +608,9 @@
 				E5090BEC27B6C90700B348A9 /* NetworkStatusManager.swift in Sources */,
 				E5090C1827B740F700B348A9 /* HomeTab.swift in Sources */,
 				E5090BE227B6C6F600B348A9 /* HTTPResponseData.swift in Sources */,
+				E5090C3527B7C16900B348A9 /* DS+Size.swift in Sources */,
+				E5090C2A27B7BC2E00B348A9 /* DesignSystem.swift in Sources */,
+				E5090C2D27B7BC6700B348A9 /* DS+Spacing.swift in Sources */,
 				E5090BFB27B6CF8B00B348A9 /* SpaceXLaunchesService.swift in Sources */,
 				E5090BDF27B6C6A500B348A9 /* HTTPRequest.swift in Sources */,
 				E5090BE727B6C78F00B348A9 /* Publisher+HTTPRequestDispatcher.swift in Sources */,
@@ -549,7 +618,10 @@
 				E5090BF127B6C97000B348A9 /* HTTPRequestBuilder.swift in Sources */,
 				E5090C1A27B741D400B348A9 /* AllLaunchesScene.swift in Sources */,
 				E5090BEE27B6C92500B348A9 /* NWPathMonitorAbstraction.swift in Sources */,
+				E5090C3B27B7C6B200B348A9 /* DS+Typography.swift in Sources */,
+				E5090C3927B7C5B000B348A9 /* RemoteImage.swift in Sources */,
 				E5090BF927B6CF2F00B348A9 /* HomeScene.swift in Sources */,
+				E5090C3D27B7C7BB00B348A9 /* DS+Colors.swift in Sources */,
 				E5090BFD27B72F0E00B348A9 /* SpaceXLaunchesEndpoint.swift in Sources */,
 				E5090C2427B742FD00B348A9 /* ShipDetailsScene.swift in Sources */,
 				E5090BE927B6C83F00B348A9 /* HTTPRequestDispatcher.swift in Sources */,
