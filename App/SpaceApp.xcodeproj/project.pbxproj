@@ -34,12 +34,14 @@
 		E5090C1C27B7427500B348A9 /* UpcomingLaunchesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C1B27B7427500B348A9 /* UpcomingLaunchesScene.swift */; };
 		E5090C2427B742FD00B348A9 /* ShipDetailsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2327B742FD00B348A9 /* ShipDetailsScene.swift */; };
 		E5090C2627B7431000B348A9 /* LaunchDetailsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2527B7431000B348A9 /* LaunchDetailsScene.swift */; };
-		E5090C2A27B7BC2E00B348A9 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2927B7BC2E00B348A9 /* DesignSystem.swift */; };
+		E5090C2A27B7BC2E00B348A9 /* DSNamespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2927B7BC2E00B348A9 /* DSNamespace.swift */; };
 		E5090C2D27B7BC6700B348A9 /* DS+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C2C27B7BC6700B348A9 /* DS+Spacing.swift */; };
 		E5090C3527B7C16900B348A9 /* DS+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3427B7C16900B348A9 /* DS+Size.swift */; };
 		E5090C3927B7C5B000B348A9 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3827B7C5B000B348A9 /* RemoteImage.swift */; };
 		E5090C3B27B7C6B200B348A9 /* DS+Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3A27B7C6B200B348A9 /* DS+Typography.swift */; };
 		E5090C3D27B7C7BB00B348A9 /* DS+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3C27B7C7BB00B348A9 /* DS+Colors.swift */; };
+		E5090C3F27B8723300B348A9 /* DS+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C3E27B8723300B348A9 /* DS+CornerRadius.swift */; };
+		E5090C4127B87F3200B348A9 /* UpcomingLaunchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C4027B87F3200B348A9 /* UpcomingLaunchCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,12 +92,14 @@
 		E5090C1B27B7427500B348A9 /* UpcomingLaunchesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingLaunchesScene.swift; sourceTree = "<group>"; };
 		E5090C2327B742FD00B348A9 /* ShipDetailsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipDetailsScene.swift; sourceTree = "<group>"; };
 		E5090C2527B7431000B348A9 /* LaunchDetailsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchDetailsScene.swift; sourceTree = "<group>"; };
-		E5090C2927B7BC2E00B348A9 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		E5090C2927B7BC2E00B348A9 /* DSNamespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSNamespace.swift; sourceTree = "<group>"; };
 		E5090C2C27B7BC6700B348A9 /* DS+Spacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Spacing.swift"; sourceTree = "<group>"; };
 		E5090C3427B7C16900B348A9 /* DS+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Size.swift"; sourceTree = "<group>"; };
 		E5090C3827B7C5B000B348A9 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		E5090C3A27B7C6B200B348A9 /* DS+Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Typography.swift"; sourceTree = "<group>"; };
 		E5090C3C27B7C7BB00B348A9 /* DS+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+Colors.swift"; sourceTree = "<group>"; };
+		E5090C3E27B8723300B348A9 /* DS+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DS+CornerRadius.swift"; sourceTree = "<group>"; };
+		E5090C4027B87F3200B348A9 /* UpcomingLaunchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingLaunchCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,7 +347,6 @@
 		E5090C1227B7405B00B348A9 /* All */ = {
 			isa = PBXGroup;
 			children = (
-				E5090C3327B7BF5300B348A9 /* Views */,
 				E5090C1927B741D400B348A9 /* AllLaunchesScene.swift */,
 			);
 			path = All;
@@ -352,6 +355,7 @@
 		E5090C1327B7406000B348A9 /* Upcoming */ = {
 			isa = PBXGroup;
 			children = (
+				E5090C3327B7BF5300B348A9 /* Views */,
 				E5090C1B27B7427500B348A9 /* UpcomingLaunchesScene.swift */,
 			);
 			path = Upcoming;
@@ -430,7 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				E5090C2B27B7BC5100B348A9 /* Tokens */,
-				E5090C2927B7BC2E00B348A9 /* DesignSystem.swift */,
+				E5090C2927B7BC2E00B348A9 /* DSNamespace.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -442,6 +446,7 @@
 				E5090C3427B7C16900B348A9 /* DS+Size.swift */,
 				E5090C3A27B7C6B200B348A9 /* DS+Typography.swift */,
 				E5090C3C27B7C7BB00B348A9 /* DS+Colors.swift */,
+				E5090C3E27B8723300B348A9 /* DS+CornerRadius.swift */,
 			);
 			path = Tokens;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 		E5090C3327B7BF5300B348A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E5090C4027B87F3200B348A9 /* UpcomingLaunchCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -609,7 +615,7 @@
 				E5090C1827B740F700B348A9 /* HomeTab.swift in Sources */,
 				E5090BE227B6C6F600B348A9 /* HTTPResponseData.swift in Sources */,
 				E5090C3527B7C16900B348A9 /* DS+Size.swift in Sources */,
-				E5090C2A27B7BC2E00B348A9 /* DesignSystem.swift in Sources */,
+				E5090C2A27B7BC2E00B348A9 /* DSNamespace.swift in Sources */,
 				E5090C2D27B7BC6700B348A9 /* DS+Spacing.swift in Sources */,
 				E5090BFB27B6CF8B00B348A9 /* SpaceXLaunchesService.swift in Sources */,
 				E5090BDF27B6C6A500B348A9 /* HTTPRequest.swift in Sources */,
@@ -621,7 +627,9 @@
 				E5090C3B27B7C6B200B348A9 /* DS+Typography.swift in Sources */,
 				E5090C3927B7C5B000B348A9 /* RemoteImage.swift in Sources */,
 				E5090BF927B6CF2F00B348A9 /* HomeScene.swift in Sources */,
+				E5090C3F27B8723300B348A9 /* DS+CornerRadius.swift in Sources */,
 				E5090C3D27B7C7BB00B348A9 /* DS+Colors.swift in Sources */,
+				E5090C4127B87F3200B348A9 /* UpcomingLaunchCard.swift in Sources */,
 				E5090BFD27B72F0E00B348A9 /* SpaceXLaunchesEndpoint.swift in Sources */,
 				E5090C2427B742FD00B348A9 /* ShipDetailsScene.swift in Sources */,
 				E5090BE927B6C83F00B348A9 /* HTTPRequestDispatcher.swift in Sources */,

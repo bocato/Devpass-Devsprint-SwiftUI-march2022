@@ -46,7 +46,10 @@ struct HomeScene_Previews: PreviewProvider {
         HomeScene(
             viewModel: .init(
                 initialState: .init(),
-                upcomingLaunchesViewModel: .init(initialState: .init()),
+                upcomingLaunchesViewModel: .init(
+                    initialState: .init(),
+                    environment: .init(spaceXLaunchesService: .dummy)
+                ),
                 allLaunchesViewModel: .init(initialState: .init())
             )
         )

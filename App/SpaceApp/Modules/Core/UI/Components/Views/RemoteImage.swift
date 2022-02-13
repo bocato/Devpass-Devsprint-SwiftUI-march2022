@@ -18,19 +18,10 @@ public struct RemoteImage: View {
                     .resizable()
                     .scaledToFit()
             case .failure:
-                errorView("The image could not be loaded, please check your network connection.") // TODO: Localize
+                Image(systemName: "photo.fill")
             @unknown default:
-                errorView("Invalid image.") // TODO: Localize
+                Image(systemName: "photo.fill")
             }
-        }
-        .dsFrameOfSize(.medium)
-    }
-    
-    private func errorView(_ message: String) -> some View {
-        VStack {
-            Image(systemName: "photo.fill")
-                .foregroundColor(.red)
-            Text(message)
         }
     }
 }

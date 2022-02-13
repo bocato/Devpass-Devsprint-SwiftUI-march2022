@@ -24,3 +24,12 @@ extension SpaceXLaunchesService {
         )
     }
 }
+
+#if DEBUG
+extension SpaceXLaunchesService {
+    static let dummy: Self = .init(
+        fetchAllLaunches: { Empty().eraseToAnyPublisher() },
+        fetchLaunchesByQuery: { _ in Empty().eraseToAnyPublisher() }
+    )
+}
+#endif

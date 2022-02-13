@@ -1,12 +1,13 @@
 import CoreGraphics
+import SwiftUI
 
 extension DS {
-    public struct Spacing {
+    public struct CornerRadius {
         let value: CGFloat
     }
 }
 
-extension DS.Spacing {
+extension DS.CornerRadius {
     /// 0 px
     public static let none: Self = .init(value: 0)
     /// 2 px
@@ -29,6 +30,12 @@ extension DS.Spacing {
     public static let xLarge: Self = .init(value: 64)
 }
 
+public extension View {
+    func dsCornerRadius(_ cornerRadius: DS.CornerRadius) -> some View {
+        self.cornerRadius(cornerRadius.value)
+    }
+}
+
 public extension CGFloat {
-    static func dsSpacing(_ spacing: DS.Spacing) -> Self { spacing.value }
+    static func dsCornerRadius(_ cornerRadius: DS.CornerRadius) -> Self { cornerRadius.value }
 }

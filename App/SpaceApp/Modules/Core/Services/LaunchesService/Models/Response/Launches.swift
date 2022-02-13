@@ -7,14 +7,14 @@ struct LaunchesResponse: Decodable {
     let nextPage: Int
 }
 
-struct Launch: Decodable {
+struct Launch: Decodable, Equatable {
     let id: String
     let name: String
     let links: Links
     let success: Bool
     let details: String?
     let flightNumber: Int
-    let data: String
+    let date: Date
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -23,13 +23,13 @@ struct Launch: Decodable {
         case success
         case details
         case flightNumber = "flight_number"
-        case data = "date_utc"
+        case date = "date_utc"
     }
     
-    struct Links: Decodable {
+    struct Links: Decodable, Equatable {
         let patch: Patch
         
-        struct Patch: Decodable {
+        struct Patch: Decodable, Equatable {
             let small: String
             let large: String
         }
