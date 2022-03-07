@@ -50,6 +50,7 @@
 		E5090C5027B897F400B348A9 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090C4F27B897F400B348A9 /* EmptyView.swift */; };
 		E50FB66827D5F7B300DFD1DD /* LaunchesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FB66727D5F7B300DFD1DD /* LaunchesPage.swift */; };
 		E50FB66B27D5F9AD00DFD1DD /* LaunchesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FB66A27D5F9AD00DFD1DD /* LaunchesQuery.swift */; };
+		E58D8F5527D6CE9B006F16EC /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8F5427D6CE9B006F16EC /* InformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		E5090C4F27B897F400B348A9 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		E50FB66727D5F7B300DFD1DD /* LaunchesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPage.swift; sourceTree = "<group>"; };
 		E50FB66A27D5F9AD00DFD1DD /* LaunchesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesQuery.swift; sourceTree = "<group>"; };
+		E58D8F5427D6CE9B006F16EC /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +494,7 @@
 		E5090C3727B7C5A700B348A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E58D8F5427D6CE9B006F16EC /* InformationView.swift */,
 				E5090C3827B7C5B000B348A9 /* RemoteImage.swift */,
 				E5090C4727B8961600B348A9 /* ErrorView.swift */,
 				E5090C4D27B8978300B348A9 /* LoadingView.swift */,
@@ -705,6 +708,7 @@
 				E5090C2427B742FD00B348A9 /* RocketDetailsScene.swift in Sources */,
 				E5090BE927B6C83F00B348A9 /* HTTPRequestDispatcher.swift in Sources */,
 				E5090BB027B6C60D00B348A9 /* SpaceAppApp.swift in Sources */,
+				E58D8F5527D6CE9B006F16EC /* InformationView.swift in Sources */,
 				E5090C4E27B8978300B348A9 /* LoadingView.swift in Sources */,
 				E5090C0527B7302600B348A9 /* Launches.swift in Sources */,
 			);

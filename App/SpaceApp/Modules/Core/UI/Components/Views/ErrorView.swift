@@ -13,21 +13,21 @@ public struct ErrorView: View {
     }
     
     public var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Spacer()
-                Image(systemName: "exclamationmark.triangle.fill")
-                if let retryAction = retryAction {
-                    Button("Retry") {
-                        retryAction()
-                    }
-                    .primaryStyle()
-                }
-                Spacer()
-            }
-            Text(text)
-            Spacer()
-        }
+        InformationView(
+            text: text,
+            sfSymbolName: "exclamationmark.triangle.fill",
+            retryAction: retryAction
+        )
     }
 }
+
+#if DEBUG
+struct ErrorView_Previews: PreviewProvider {
+    static var previews: some View {
+        ErrorView(
+            text: "Oh no, it's empty!",
+            retryAction: {}
+        )
+    }
+}
+#endif

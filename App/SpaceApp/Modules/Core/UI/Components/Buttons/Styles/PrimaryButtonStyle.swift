@@ -1,29 +1,19 @@
 import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
-    private let foregroundColor: Color
-    private let borderColor: Color
-
-    init(
-        foregroundColor: Color = .accentColor,
-        borderColor: Color = .accentColor
-    ) {
-        self.foregroundColor = foregroundColor
-        self.borderColor = borderColor
-    }
-
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
             .frame(minWidth: .zero, maxWidth: .infinity)
             .padding()
-            .foregroundColor(foregroundColor)
+            .background(Color.ds(.accentColor))
+            .foregroundColor(Color.ds(.primary))
             .background(
                 RoundedRectangle(
                     cornerRadius: .dsCornerRadius(.xSmall),
                     style: .continuous
                 )
-                .stroke(borderColor)
+                .stroke(Color.ds(.accentColor))
             )
             .cornerRadius(.dsCornerRadius(.xSmall))
             .padding(.horizontal, .dsSpacing(.xxSmall))
@@ -31,15 +21,20 @@ struct PrimaryButtonStyle: ButtonStyle {
 }
 
 extension Button {
-    func primaryStyle(
-        foregroundColor: DS.Color = .accentColor,
-        borderColor: DS.Color = .accentColor
-    ) -> some View {
-        self.buttonStyle(
-            PrimaryButtonStyle(
-                foregroundColor: foregroundColor.color,
-                borderColor: borderColor.color
-            )
-        )
+    func primaryStyle() -> some View {
+        self.buttonStyle(PrimaryButtonStyle())
     }
 }
+
+#if DEBUG
+struct PrimaryButtonStyle_Previews: PreviewProvider {
+    static var previews: some View {
+        Button(
+            "My Button",
+            action: {}
+        )
+        .primaryStyle()
+        .preferredColorScheme(.dark)
+    }
+}
+#endif
