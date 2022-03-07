@@ -57,6 +57,10 @@ public final class HTTPRequestDispatcher: HTTPRequestDispatching {
                         )
                     }
 
+//                    let stringData = String(data: data, encoding: .utf8)
+//                    print(stringData)
+//                    dump(stringData)
+                    
                     return .init(
                         data: data,
                         statusCode: httpResponse.statusCode

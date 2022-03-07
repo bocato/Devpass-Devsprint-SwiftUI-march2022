@@ -19,9 +19,9 @@ final class HomeViewModel: ObservableObject {
     // MARK: - Initialization
     
     init(
-        initialState: HomeState,
-        upcomingLaunchesViewModel: UpcomingLaunchesViewModel,
-        allLaunchesViewModel: AllLaunchesViewModel
+        initialState: HomeState = .init(),
+        upcomingLaunchesViewModel: UpcomingLaunchesViewModel = .init(),
+        allLaunchesViewModel: AllLaunchesViewModel = .init()
     ) {
         self.state = initialState
         self.upcomingLaunchesViewModel = upcomingLaunchesViewModel

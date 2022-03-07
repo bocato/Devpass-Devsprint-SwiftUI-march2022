@@ -1,20 +1,19 @@
 import Foundation
 import Combine
 
-struct LaunchesQuery: Encodable {
-    let options: Options
-    
-    struct Options: Encodable {
-        let limit: Int
-    }
-}
-
 enum SpaceXLaunchesEndpoint: HTTPRequestType {
     case fetchAllLaunches
     case fetchLaunchesByQuery(LaunchesQuery)
 
-    var url: URL { .init(string: "https://api.spacexdata.com/v5")! }
-    var path: String { "/launches" }
+    var url: URL { .init(string: "https://api.spacexdata.com/v5/launches")! }
+    var path: String {
+        switch self {
+        case .fetchAllLaunches:
+            return ""
+        case .fetchLaunchesByQuery:
+            return "/query"
+        }
+    }
     var method: HTTPMethod { .get }
 
     var parameters: HTTPRequestParameters {

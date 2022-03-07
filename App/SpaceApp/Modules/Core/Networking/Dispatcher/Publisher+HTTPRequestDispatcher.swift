@@ -29,12 +29,12 @@ public extension Publisher where Output == HTTPResponseData {
     ) -> AnyPublisher<Value, HTTPRequestError> where Value: Decodable {
         map(\.data)
             .decode(type: type, decoder: decoder)
-            .mapError {
-                switch $0 {
+            .mapError { rawError in
+                switch rawError {
                 case let requestError as HTTPRequestError:
                     return requestError
                 default:
-                    return HTTPRequestError.jsonDecoding($0)
+                    return HTTPRequestError.jsonDecoding(rawError)
                 }
             }
             .eraseToAnyPublisher()

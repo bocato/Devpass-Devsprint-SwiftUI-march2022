@@ -20,19 +20,14 @@ extension DS {
 extension DS.Color {
     public static let primary: Self = .init(color: .primary)
     public static let secondary: Self = .init(color: .secondary)
-    public static var background: Self {
-        DS.DynamicColor(
+    public static let accentColor: Self = .init(color: .accentColor)
+    public static var background: Self = {
+        let dynamic = DS.DynamicColor(
             light: Color.gray.opacity(0.2),
             dark: .init(.sRGB, red: 28/255, green: 28/255, blue: 30/255, opacity: 1)
-        ).dsColor
-    }
-}
-
-extension DS.DynamicColor {
-    public static let background: Self = DS.DynamicColor(
-        light: Color.gray.opacity(0.2),
-        dark: .init(.sRGB, red: 28/255, green: 28/255, blue: 30/255, opacity: 1)
-    )
+        )
+        return dynamic.dsColor
+    }()
 }
 
 public extension Color {

@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct UpcomingLaunchCard: View {
-    struct Model {
+struct UpcomingLaunchCard: View { // NextLaunchView
+    struct Model: Equatable, Hashable, Identifiable {
         let id: String
         let imageURL: String
         let name: String
@@ -17,42 +17,59 @@ struct UpcomingLaunchCard: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                RemoteImage(url: model.imageURL)
-                    .frame(
-                        width: DS.Size.xLarge.width,
-                        height: .infinity
-                    )
-                VStack(
-                    alignment: .leading,
-                    spacing: .dsSpacing(.micro)
-                ) {
-                    Text(model.name)
-                        .dsTypography(.headline, color: .primary)
-                    Text(model.date)
-                        .dsTypography(.body, color: .secondary)
-                    Text("#\(model.flightNumber)")
-                        .dsTypography(.body, color: .secondary)
-                        .lineLimit(nil)
+        NavigationView {
+            VStack {
+                HStack {
+                    RemoteImage(url: model.imageURL)
+                        .dsFrameOfSize(.xLarge)
+                    VStack(
+                        alignment: .leading,
+                        spacing: .dsSpacing(.micro)
+                    ) {
+                        Text(model.name)
+                            .dsTypography(.headline, color: .primary)
+                        Text(model.date)
+                            .dsTypography(.body, color: .secondary)
+                        Text("#\(model.flightNumber)")
+                            .dsTypography(.body, color: .secondary)
+                            .lineLimit(nil)
+                    }
+                    Spacer()
                 }
-                Spacer()
+                if let details = model.details {
+                    Text(details)
+                        .dsTypography(.body, color: .secondary)
+                        .lineLimit(3)
+                }
             }
-            if let details = model.details {
-                Text(details)
-                    .dsTypography(.body, color: .secondary)
-            }
-            
+            .padding(.all, .dsSpacing(.small))
+            .background(Color.ds(.background))
+            .dsCornerRadius(.small)
+            .overlay(
+                RoundedRectangle(cornerRadius: .dsCornerRadius(.small))
+                    .stroke(
+                        Color.ds(.background),
+                        lineWidth: 1
+                    )
+            )
         }
-        .padding(.all, .dsSpacing(.small))
-        .background(Color.ds(.background))
-        .dsCornerRadius(.small)
-        .overlay(
-            RoundedRectangle(cornerRadius: .dsCornerRadius(.small))
-                .stroke(
-                    Color.ds(.background),
-                    lineWidth: 1
-                )
+    }
+}
+
+extension UpcomingLaunchCard.Model {
+    init(_ launch: Launch) {
+        self.init(
+            id: launch.id,
+            imageURL: launch.links.patch.small ?? "",
+            name: launch.name,
+            flightNumber: launch.flightNumber,
+            date: launch.date.formatted(
+                .dateTime
+                .month(.wide)
+                .day(.twoDigits)
+                .year()
+             ),
+            details: launch.details
         )
     }
 }

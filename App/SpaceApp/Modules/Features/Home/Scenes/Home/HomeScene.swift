@@ -19,6 +19,7 @@ struct HomeScene: View {
                         )
                     }
                     .tag(tab.tag)
+                    .navigationTitle(tab.title)
             }
         }
         .tabViewStyle(DefaultTabViewStyle())
@@ -47,8 +48,13 @@ struct HomeScene_Previews: PreviewProvider {
             viewModel: .init(
                 initialState: .init(),
                 upcomingLaunchesViewModel: .init(
-                    initialState: .init(),
-                    environment: .init(spaceXLaunchesService: .dummy)
+                    initialState: .init(
+                        launches: [
+                            .fixture(),
+                            .fixture()
+                        ]
+                    ),
+                    environment: .dummy
                 ),
                 allLaunchesViewModel: .init(initialState: .init())
             )

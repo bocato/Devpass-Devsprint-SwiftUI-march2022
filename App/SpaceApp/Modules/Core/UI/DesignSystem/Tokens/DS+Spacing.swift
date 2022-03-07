@@ -1,4 +1,5 @@
 import CoreGraphics
+import SwiftUI
 
 extension DS {
     public struct Spacing {

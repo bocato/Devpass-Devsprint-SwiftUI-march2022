@@ -17,6 +17,8 @@ extension DS.Size {
     public static let large: Self = .init(width: 48, height: 48)
     /// width: 64, height: 64
     public static let xLarge: Self = .init(width: 64, height: 64)
+    /// width: 128, height: 128
+    public static let xxLarge: Self = .init(width: 128, height: 128)
 }
 
 public extension View {
