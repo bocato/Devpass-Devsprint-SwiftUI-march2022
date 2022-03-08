@@ -2,7 +2,7 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='1. Combine Basics'/>
-        <page name='2. SwiftUI Property Wrappers'/>
-        <page name='3. SwiftUI Lifecycle'/>
+        <page name='2. SwiftUI Lifecycle'/>
+        <page name='3. SwiftUI Property Wrappers'/>
     </pages>
 </playground>
