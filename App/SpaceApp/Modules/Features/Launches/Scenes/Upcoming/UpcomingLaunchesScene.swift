@@ -10,11 +10,13 @@ struct UpcomingLaunchesScene: View {
                 LoadingView()
             case let .loaded(launches):
                 LazyVStack {
-                    Section("Upcoming") {
+                    Section {
                         ForEach(launches, id: \.id) { model in
                             UpcomingLaunchCard(model: model)
                                 .padding(.all, .dsSpacing(.tiny))
                         }
+                    } header: {
+                        Text("Upcoming")
                     }
                 }
             case .empty:

@@ -64,12 +64,7 @@ extension LaunchCard.Model {
             imageURL: launch.links.patch.small ?? "",
             flightNumber: launch.flightNumber,
             name: launch.name,
-            date: launch.date.formatted(
-                .dateTime
-                .month(.wide)
-                .day(.twoDigits)
-                .year()
-             ),
+            date: "July 03, 2020", // TODO: FORMAT DATE
             success: launch.success ?? false
         )
     }

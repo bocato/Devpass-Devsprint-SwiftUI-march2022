@@ -63,12 +63,7 @@ extension UpcomingLaunchCard.Model {
             imageURL: launch.links.patch.small ?? "",
             name: launch.name,
             flightNumber: launch.flightNumber,
-            date: launch.date.formatted(
-                .dateTime
-                .month(.wide)
-                .day(.twoDigits)
-                .year()
-             ),
+            date: "July 03, 2020", // TODO: FORMAT DATE!
             details: launch.details
         )
     }

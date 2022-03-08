@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F9066BD27D7B8B90067DB0C /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9066BC27D7B8B90067DB0C /* ImageLoader.swift */; };
 		E5090BB027B6C60D00B348A9 /* SpaceAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5090BAF27B6C60D00B348A9 /* SpaceAppApp.swift */; };
 		E5090BB427B6C61000B348A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5090BB327B6C61000B348A9 /* Assets.xcassets */; };
 		E5090BB727B6C61000B348A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5090BB627B6C61000B348A9 /* Preview Assets.xcassets */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F9066BC27D7B8B90067DB0C /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		E5090BAC27B6C60D00B348A9 /* SpaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5090BAF27B6C60D00B348A9 /* SpaceAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceAppApp.swift; sourceTree = "<group>"; };
 		E5090BB327B6C61000B348A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F9066BB27D7B8960067DB0C /* RemoteImage */ = {
+			isa = PBXGroup;
+			children = (
+				E5090C3827B7C5B000B348A9 /* RemoteImage.swift */,
+				3F9066BC27D7B8B90067DB0C /* ImageLoader.swift */,
+			);
+			path = RemoteImage;
+			sourceTree = "<group>";
+		};
 		E5090BA327B6C60D00B348A9 = {
 			isa = PBXGroup;
 			children = (
@@ -494,8 +505,8 @@
 		E5090C3727B7C5A700B348A9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3F9066BB27D7B8960067DB0C /* RemoteImage */,
 				E58D8F5427D6CE9B006F16EC /* InformationView.swift */,
-				E5090C3827B7C5B000B348A9 /* RemoteImage.swift */,
 				E5090C4727B8961600B348A9 /* ErrorView.swift */,
 				E5090C4D27B8978300B348A9 /* LoadingView.swift */,
 				E5090C4F27B897F400B348A9 /* EmptyView.swift */,
@@ -694,6 +705,7 @@
 				E5090C2627B7431000B348A9 /* LaunchDetailsScene.swift in Sources */,
 				E5090BF127B6C97000B348A9 /* HTTPRequestBuilder.swift in Sources */,
 				E5090C1A27B741D400B348A9 /* AllLaunchesScene.swift in Sources */,
+				3F9066BD27D7B8B90067DB0C /* ImageLoader.swift in Sources */,
 				E5090BEE27B6C92500B348A9 /* NWPathMonitorAbstraction.swift in Sources */,
 				E5090C3B27B7C6B200B348A9 /* DS+Typography.swift in Sources */,
 				E5090C3927B7C5B000B348A9 /* RemoteImage.swift in Sources */,
@@ -879,6 +891,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -908,6 +921,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
