@@ -12,6 +12,7 @@ struct StateBasedNavigationExampleApp: App {
     var body: some Scene {
         WindowGroup {
             ListScene(viewModel: .init(initialState: .init()))
+//            ListV2Scene(viewModel: .init(initialState: .init()))
         }
     }
 }

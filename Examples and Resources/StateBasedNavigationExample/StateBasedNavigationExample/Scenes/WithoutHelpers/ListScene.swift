@@ -129,8 +129,9 @@ struct ListScene: View {
                     Button("Filters") {
                         viewModel.presentFilters()
                     }
+                    Spacer()
                     Button("Alert") {
-                        viewModel.presentFilters()
+                        viewModel.presentAlert()
                     }
                 }
             }

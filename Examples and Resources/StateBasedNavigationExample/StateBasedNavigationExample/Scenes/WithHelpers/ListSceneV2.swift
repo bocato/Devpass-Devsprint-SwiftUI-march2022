@@ -19,7 +19,7 @@ struct ListV2Scene: View {
                             ItemDetailScene(
                                 viewModel: .init(
                                     initialState: .init(
-                                        item: item
+                                        item: selectedItem
                                     )
                                 )
                             )
@@ -33,9 +33,13 @@ struct ListV2Scene: View {
             }
             .navigationTitle("ListV2 Scene")
             .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    Button("Open Filters") {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Filters") {
                         viewModel.presentFilters()
+                    }
+                    Spacer()
+                    Button("Alert") {
+                        viewModel.presentAlert()
                     }
                 }
             }
