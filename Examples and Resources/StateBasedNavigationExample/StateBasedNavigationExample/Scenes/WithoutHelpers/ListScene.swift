@@ -18,10 +18,17 @@ struct ListState: Equatable {
 }
 extension ListState {
     var selectedItem: String? {
-        guard
-            case let .selectedItem(item) = route
-        else { return nil }
-        return item
+        get {
+            guard
+                case let .selectedItem(item) = route
+            else { return nil }
+            return item
+        }
+        set {
+            guard let newValue = newValue else { return }
+            route = .selectedItem(newValue)
+        }
+        
     }
     
     var alert: AlertModel? {

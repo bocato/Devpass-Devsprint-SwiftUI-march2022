@@ -15,9 +15,10 @@
 		E58D8FB627D95880006F16EC /* StateBasedNavigationExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FB527D95880006F16EC /* StateBasedNavigationExampleUITestsLaunchTests.swift */; };
 		E58D8FC727D958C0006F16EC /* ListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FC627D958C0006F16EC /* ListScene.swift */; };
 		E58D8FC927D958D8006F16EC /* ItemDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FC827D958D8006F16EC /* ItemDetailScene.swift */; };
-		E58D8FCB27D958EC006F16EC /* SwiftUIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FCA27D958EC006F16EC /* SwiftUIHelpers.swift */; };
 		E58D8FD027D95947006F16EC /* FilterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FCF27D95947006F16EC /* FilterScene.swift */; };
 		E58D8FD227D96CF5006F16EC /* ListSceneV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FD127D96CF5006F16EC /* ListSceneV2.swift */; };
+		E58D8FD827DA83A8006F16EC /* ListSceneV3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58D8FD727DA83A8006F16EC /* ListSceneV3.swift */; };
+		E58D8FDB27DA83E0006F16EC /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = E58D8FDA27DA83E0006F16EC /* SwiftUINavigation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +50,9 @@
 		E58D8FB527D95880006F16EC /* StateBasedNavigationExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBasedNavigationExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E58D8FC627D958C0006F16EC /* ListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListScene.swift; sourceTree = "<group>"; };
 		E58D8FC827D958D8006F16EC /* ItemDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailScene.swift; sourceTree = "<group>"; };
-		E58D8FCA27D958EC006F16EC /* SwiftUIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHelpers.swift; sourceTree = "<group>"; };
 		E58D8FCF27D95947006F16EC /* FilterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScene.swift; sourceTree = "<group>"; };
 		E58D8FD127D96CF5006F16EC /* ListSceneV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneV2.swift; sourceTree = "<group>"; };
+		E58D8FD727DA83A8006F16EC /* ListSceneV3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSceneV3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58D8FDB27DA83E0006F16EC /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				E58D8FCC27D958F2006F16EC /* Application */,
-				E58D8FCE27D95902006F16EC /* Helpers */,
 				E58D8FCD27D958FB006F16EC /* Scenes */,
 				E58D8F9C27D9587F006F16EC /* Assets.xcassets */,
 				E58D8F9E27D9587F006F16EC /* Preview Content */,
@@ -153,14 +154,6 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		E58D8FCE27D95902006F16EC /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				E58D8FCA27D958EC006F16EC /* SwiftUIHelpers.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		E58D8FD527D96E53006F16EC /* WithoutHelpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				E58D8FD127D96CF5006F16EC /* ListSceneV2.swift */,
+				E58D8FD727DA83A8006F16EC /* ListSceneV3.swift */,
 			);
 			path = WithHelpers;
 			sourceTree = "<group>";
@@ -195,6 +189,9 @@
 			dependencies = (
 			);
 			name = StateBasedNavigationExample;
+			packageProductDependencies = (
+				E58D8FDA27DA83E0006F16EC /* SwiftUINavigation */,
+			);
 			productName = StateBasedNavigationExample;
 			productReference = E58D8F9527D9587D006F16EC /* StateBasedNavigationExample.app */;
 			productType = "com.apple.product-type.application";
@@ -267,6 +264,9 @@
 				Base,
 			);
 			mainGroup = E58D8F8C27D9587D006F16EC;
+			packageReferences = (
+				E58D8FD927DA83E0006F16EC /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = E58D8F9627D9587D006F16EC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -309,8 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58D8FD827DA83A8006F16EC /* ListSceneV3.swift in Sources */,
 				E58D8FC727D958C0006F16EC /* ListScene.swift in Sources */,
-				E58D8FCB27D958EC006F16EC /* SwiftUIHelpers.swift in Sources */,
 				E58D8FD227D96CF5006F16EC /* ListSceneV2.swift in Sources */,
 				E58D8F9927D9587E006F16EC /* StateBasedNavigationExampleApp.swift in Sources */,
 				E58D8FC927D958D8006F16EC /* ItemDetailScene.swift in Sources */,
@@ -635,6 +635,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E58D8FD927DA83E0006F16EC /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E58D8FDA27DA83E0006F16EC /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E58D8FD927DA83E0006F16EC /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E58D8F8D27D9587D006F16EC /* Project object */;
 }

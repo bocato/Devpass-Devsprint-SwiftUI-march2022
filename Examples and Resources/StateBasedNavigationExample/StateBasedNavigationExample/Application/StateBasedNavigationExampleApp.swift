@@ -11,8 +11,9 @@ import SwiftUI
 struct StateBasedNavigationExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ListScene(viewModel: .init(initialState: .init()))
-//            ListV2Scene(viewModel: .init(initialState: .init()))
+//            ListScene(viewModel: .init(initialState: .init()))
+            ListV2Scene(viewModel: .init(initialState: .init()))
+//            ListV3Scene(viewModel: .init(initialState: .init()))
         }
     }
 }
