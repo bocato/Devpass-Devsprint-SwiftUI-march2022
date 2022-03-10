@@ -33,7 +33,3 @@ struct AllLaunchesScene: View {
         }
     }
 }
-
-
-
-

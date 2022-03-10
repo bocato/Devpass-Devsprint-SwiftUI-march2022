@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ListV2Scene: View {
     @StateObject var viewModel: ListV2ViewModel
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -48,14 +48,7 @@ struct ListV2Scene: View {
                 title: { model in
                     Text(model.title)
                 },
-                unwrapping: .init(
-                    get: { viewModel.alert != nil },
-                    set: { isPresented in
-                        if !isPresented {
-                            viewModel.dismissAlert()
-                        }
-                    }
-                ),
+                unwrapping: $viewModel.state.alert,
                 actions: { model in
                     Button(model.actionTitle) {
                         viewModel.dismissAlert()

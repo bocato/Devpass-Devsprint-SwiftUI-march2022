@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-struct Alert: Equatable {
+struct AlertModel: Equatable {
     let title: String
     let message: String
     let actionTitle: String
@@ -13,7 +13,7 @@ struct ListState: Equatable {
     enum Route: Equatable {
         case selectedItem(String)
         case filter
-        case alert(Alert)
+        case alert(AlertModel)
     }
 }
 extension ListState {
@@ -24,11 +24,18 @@ extension ListState {
         return item
     }
     
-    var alert: Alert? {
-        guard
-            case let .alert(model) = route
-        else { return nil }
-        return model
+    var alert: AlertModel? {
+        get {
+            guard
+                case let .alert(model) = route
+            else { return nil }
+            return model
+        }
+        set {
+            guard let newValue = newValue else { return }
+            route = .alert(newValue)
+        }
+        
     }
 }
 
@@ -73,7 +80,7 @@ final class ListViewModel: ObservableObject {
     }
     
     func presentAlert() {
-        let alert: Alert = .init(
+        let alert: AlertModel = .init(
             title: "Hello!",
             message: "I am an Alert!",
             actionTitle: "OK"
@@ -133,7 +140,7 @@ struct ListScene: View {
                 content: { FilterScene(viewModel: .init()) }
             )
             .alert(
-                viewModel.alert?.title.map(Text.init) ?? Text(""),
+                Text(viewModel.alert?.title ?? ""),
                 isPresented: .init(
                     get: { viewModel.alert != nil },
                     set: { isPresented in
@@ -144,12 +151,12 @@ struct ListScene: View {
                 ),
                 presenting: viewModel.alert,
                 actions: { model in
-                    Button(model?.buttonTitle ?? "") {
+                    Button(model.actionTitle){
                         viewModel.dismissAlert()
                     }
                 },
                 message: { model in
-                    model?.title.map(Text.init) ?? Text("")
+                    Text(model.message)
                 }
             )
             .onAppear { viewModel.loadItems() }
