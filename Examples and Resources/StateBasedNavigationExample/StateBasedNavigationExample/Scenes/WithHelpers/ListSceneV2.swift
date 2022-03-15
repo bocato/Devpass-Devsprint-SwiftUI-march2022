@@ -149,7 +149,7 @@ fileprivate extension NavigationLink {
         @ViewBuilder label: @escaping () -> Label
     ) where Destination == WrappedDestination? {
         self.init(
-            destination: Binding(unwrap: value).map(destination), // will be triggered only if we can create the
+            destination: Binding(unwrap: value).map(destination),
             isActive: value.isPresent().didSet(onNavigate),
             label: label
         )

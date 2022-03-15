@@ -4,13 +4,14 @@ import Combine
 struct UpcomingLaunchesState: Equatable {
     var stage: Stage = .loading
     fileprivate(set) var launches: [Launch] = []
+    var errorMessage: String?
 }
 extension UpcomingLaunchesState {
     enum Stage: Equatable {
         case loading
         case loaded([UpcomingLaunchCard.Model])
         case empty
-        case error(String)
+//        case error(String)
     }
 }
 
@@ -65,26 +66,42 @@ final class UpcomingLaunchesViewModel: ObservableObject {
         loadData()
     }
     
-    private func loadData() {
-        state.stage = .loading
-        environment
-            .spaceXLaunchesService
-            .fetchAllLaunches() // TODO: Filter upcoming
-            .receive(on: environment.mainScheduler)
-            .sink(
-                receiveCompletion: { [weak self] completion in
-                    if case .failure = completion {
-                        self?.state.stage = .error("Something went wrong, please check your internet connection.")
-                    }
-                },
-                receiveValue: { [weak self] response in
-                    self?.state.launches = response
-                    let cardModels = response.map(UpcomingLaunchCard.Model.init)
-                    self?.state.stage = .loaded(cardModels)
-                }
-            )
-            .store(in: &subscriptions)
+    private func getDataFromService(_ completion: (Result<[Launch], Error>) -> Void) {
+        // ...
     }
+    
+    private func loadData() {
+        self.state.errorMessage = nil
+        getDataFromService { result in
+            switch result {
+            case let .success(myLaunches):
+                print(myLaunches)
+            case let .failure(error):
+                self.state.errorMessage = error.localizedDescription
+            }
+        }
+    }
+    
+//    private func loadData() {
+//        state.stage = .loading
+//        environment
+//            .spaceXLaunchesService
+//            .fetchAllLaunches() // TODO: Filter upcoming
+//            .receive(on: environment.mainScheduler)
+//            .sink(
+//                receiveCompletion: { [weak self] completion in
+//                    if case .failure = completion {
+//                        self?.state.stage = .error("Something went wrong, please check your internet connection.")
+//                    }
+//                },
+//                receiveValue: { [weak self] response in
+//                    self?.state.launches = response
+//                    let cardModels = response.map(UpcomingLaunchCard.Model.init)
+//                    self?.state.stage = .loaded(cardModels)
+//                }
+//            )
+//            .store(in: &subscriptions)
+//    }
 }
 extension UpcomingLaunchesViewModel {
     subscript<T>(dynamicMember keyPath: KeyPath<UpcomingLaunchesState, T>) -> T {

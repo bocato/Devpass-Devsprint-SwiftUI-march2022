@@ -1,5 +1,6 @@
 import UIKit
 import Combine
+import Foundation
 
 // MARK: - 1. Publishers
 print("*** 1.1. Publishers ***")
@@ -156,8 +157,6 @@ numbersStreamController4 = nil // this would be the same as the object receives 
 print(wasDeInitCalled == true) // prints: true, since the object was set to nil and is now dead... If the object is dead, everything inside it is also dead, so our subscription is gone.
 print("")
 
-// -> Continue from here!
-
 // MARK: - 1.2. Publishers: AnyPublisher
 print("*** 1.2. Publishers: AnyPublisher ***")
 /// What is ``AnyPublisher``?
@@ -212,6 +211,7 @@ func getDataUsingCombine() -> AnyPublisher<String, NSError> {
     }
     return myFuture.eraseToAnyPublisher()
 }
+
 var returnFromGetDataUsingCombine: [Any] = .init()
 _ = getDataUsingCombine()
     .sink(
@@ -270,6 +270,84 @@ _ = failExample.sink(
 )
 print("returnFromFailExample:", returnFromFailExample) // prints: [.failure(Error Domain=FailExample Code=-1 "(null)")]
 print("")
+
+
+/// Creating a simple network thing from what we saw, also using modifiers...
+enum NetworkError: Error {
+    case invalidURL
+    case invalidData
+    case invalidResponse
+    case someOtherError(Error)
+}
+
+/// New Combine API's
+func getDataFromGoogle(url urlString: String) -> AnyPublisher<String, NetworkError> {
+    guard let googleURL = URL(string: "www.google.com") else {
+        return Fail(error: NetworkError.invalidURL)
+            .eraseToAnyPublisher()
+    }
+    
+    return URLSession
+        .shared
+        .dataTaskPublisher(for: googleURL)
+        .tryMap { data, response -> String in
+            
+            guard
+                let httpResponse = response as? HTTPURLResponse,
+                httpResponse.statusCode == 200
+            else { throw NetworkError.invalidResponse }
+            
+            guard
+                let string = String(data: data, encoding: .utf8)
+            else { throw NetworkError.invalidData }
+            
+            return string
+        }
+        .mapError { rawError -> NetworkError in
+            switch rawError {
+            case let networkError as NetworkError:
+                return networkError
+            default:
+                return .someOtherError(rawError)
+            }
+        }
+        .eraseToAnyPublisher()
+}
+
+/// "Old" closure-based API's
+func getDataFromGoogleOLD(url urlString: String, completion: @escaping (Result<String, NetworkError>) -> Void) {
+    guard let googleURL = URL(string: "www.google.com") else {
+        completion(.failure(NetworkError.invalidURL))
+        return
+    }
+    
+    let getDataFromGoogleOLDTask = URLSession.shared.dataTask(with: googleURL) { data, response, error in
+        
+        if let rawError = error {
+            completion(.failure(.someOtherError(rawError)))
+            return
+        }
+        
+        guard
+            let httpResponse = response as? HTTPURLResponse,
+            httpResponse.statusCode == 200
+        else {
+            completion(.failure(NetworkError.invalidResponse))
+            return
+        }
+        
+        guard
+            let data = data,
+            let string = String(data: data, encoding: .utf8)
+        else {
+            completion(.failure(NetworkError.invalidData))
+            return
+        }
+        
+        completion(.success(string))
+    }
+    getDataFromGoogleOLDTask.resume()
+}
 
 // MARK: - 1.4. Publishers: Operators
 print("*** 1.4. Publishers: Operators ***")

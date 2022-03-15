@@ -9,6 +9,17 @@ import SwiftUI
 
 struct ListV3Scene: View {
     @StateObject var viewModel: ListV3ViewModel
+    
+//    NavigationLink(
+//        unwrapping: $viewModel.state.route,
+//        destination: { $route in
+//            buildItemView(for: route)
+//        },
+//        onNavigate: { isActive in
+//            viewModel.state.route = isActive ? .selectedItem(item) : nil
+//        },
+//        label: { Text(item) }
+//    )
 
     var body: some View {
         NavigationView {

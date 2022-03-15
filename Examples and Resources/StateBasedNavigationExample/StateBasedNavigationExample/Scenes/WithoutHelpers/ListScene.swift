@@ -16,6 +16,7 @@ struct ListState: Equatable {
         case alert(AlertModel)
     }
 }
+
 extension ListState {
     var selectedItem: String? {
         get {
@@ -28,7 +29,6 @@ extension ListState {
             guard let newValue = newValue else { return }
             route = .selectedItem(newValue)
         }
-        
     }
     
     var alert: AlertModel? {
