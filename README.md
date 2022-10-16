@@ -9,3 +9,5 @@ This app shows the next launchs for the SpaceX, using vanilla SwiftUI MVVM refer
 <img src="screenshots/screenshot-3.png" alt="drawing" width="200"/>
 <img src="screenshots/screenshot-6.png" alt="drawing" width="200"/>
 </p>
+
+## This was used as playground for example on a devsprint in March/2022
